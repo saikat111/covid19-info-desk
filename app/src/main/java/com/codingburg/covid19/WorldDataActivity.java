@@ -2,6 +2,7 @@ package com.codingburg.covid19;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.app.ProgressDialog;
@@ -11,6 +12,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -23,8 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
-import com.google.android.material.snackbar.Snackbar;
+import com.codingburg.covid19.activity.MainActivity;
 import com.leo.simplearcloader.SimpleArcLoader;
 
 import org.eazegraph.lib.charts.BarChart;
@@ -46,10 +49,23 @@ public class WorldDataActivity extends AppCompatActivity {
     private  BarChart mBarChart;
     CoordinatorLayout coordinatorLayout;
     private TextView criticalPerOneMillion, recoveredPerOneMillion,activePerOneMillion,deathsPerOneMillion,casesPerOneMillion,critical;
+    Animation top_anumation, buttom_animation, middel_animation;
+    private ConstraintLayout constraintLayout1, constraintLayout2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_world_data);;
+        top_anumation = AnimationUtils.loadAnimation(this,R.anim.top_animation);
+        buttom_animation = AnimationUtils.loadAnimation(this,R.anim.buttom_animation);
+        middel_animation = AnimationUtils.loadAnimation(this,R.anim.middel_animation);
+        constraintLayout1 =findViewById(R.id.constraintLayout1);
+        constraintLayout2 = findViewById(R.id.constraintLayout2);
+        constraintLayout1.setAnimation(middel_animation);
+        constraintLayout2.setAnimation(middel_animation);
+        top_anumation = AnimationUtils.loadAnimation(this,R.anim.top_animation);
+        buttom_animation = AnimationUtils.loadAnimation(this,R.anim.buttom_animation);
+        middel_animation = AnimationUtils.loadAnimation(this,R.anim.middel_animation);
         casesPerOneMillion  = findViewById(R.id.casesPerOneMillion);
         recoveredPerOneMillion  = findViewById(R.id.recoveredPerOneMillion);
         deathsPerOneMillion  = findViewById(R.id.deathsPerOneMillion);

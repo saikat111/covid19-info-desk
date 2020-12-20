@@ -27,6 +27,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:orientation="vertical">
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -55,7 +56,7 @@
                 android:onClick="details"
                 android:id="@+id/constraintLayout1"
                 android:layout_width="match_parent"
-                android:layout_height="330dp"
+                android:layout_height="250dp"
                 android:background="@drawable/home_bg"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -63,26 +64,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/menu"
-                    android:layout_marginLeft="16dp" />
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="20dp"
-                    android:layout_height="24dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/search"
-                    android:layout_marginRight="16dp" />
+
 
 
                 <androidx.cardview.widget.CardView
@@ -253,7 +235,6 @@
                     app:layout_constraintEnd_toStartOf="@+id/cardView3"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView"
                     android:layout_marginRight="8dp"
                     android:layout_marginLeft="16dp">
 
@@ -759,8 +740,17 @@
 
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="More Details"
+                android:textSize="25sp"
+                android:fontFamily="@font/baloo">
+            </TextView>
 
             <GridLayout
+                android:layout_marginTop="10dp"
                 android:id="@+id/GridLayout1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -836,14 +826,14 @@
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
+
                             android:fontFamily="@font/regular"
                             android:text="Cases Per One Million"
                             android:maxLines="2"
                             android:gravity="center"
                             android:textColor="#1E2432"
                             android:textSize="15sp"
-                            android:layout_marginLeft="4dp" />
+                            />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -889,14 +879,14 @@
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
+
                             android:fontFamily="@font/regular"
                             android:maxLines="2"
                             android:gravity="center"
                             android:text="Deaths Per One Million"
                             android:textColor="#1E2432"
                             android:textSize="15sp"
-                            android:layout_marginLeft="4dp" />
+                             />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -906,7 +896,7 @@
                                 android:id="@+id/deathsPerOneMillion"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
+                                android:layout_marginTop="18dp"
                                 android:fontFamily="@font/bold"
                                 android:textColor="#1E2432"
                                 android:textSize="20sp"/>
@@ -942,14 +932,13 @@
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
                             android:fontFamily="@font/regular"
                             android:maxLines="2"
                             android:gravity="center"
                             android:text="Active Per One Million"
                             android:textColor="#1E2432"
                             android:textSize="15sp"
-                            android:layout_marginLeft="4dp" />
+                           />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -959,7 +948,7 @@
                                 android:id="@+id/activePerOneMillion"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
+                                android:layout_marginTop="12dp"
                                 android:fontFamily="@font/bold"
                                 android:textColor="#1E2432"
                                 android:textSize="20sp"/>
@@ -995,14 +984,13 @@
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
                             android:fontFamily="@font/regular"
                             android:maxLines="2"
                             android:gravity="center"
                             android:text="Recovered Per OneMillion"
                             android:textColor="#1E2432"
                             android:textSize="15sp"
-                            android:layout_marginLeft="4dp" />
+                            />
                         <LinearLayout
                             android:layout_marginTop="5dp"
                             android:layout_width="wrap_content"
@@ -1013,7 +1001,7 @@
                                 android:id="@+id/recoveredPerOneMillion"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
+                                android:layout_marginTop="12dp"
                                 android:fontFamily="@font/bold"
                                 android:textColor="#1E2432"
                                 android:textSize="20sp"/>
@@ -1049,14 +1037,13 @@
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
                             android:fontFamily="@font/regular"
                             android:maxLines="2"
                             android:gravity="center"
                             android:text="Critical Per OneMillion"
                             android:textColor="#1E2432"
                             android:textSize="15sp"
-                            android:layout_marginLeft="4dp" />
+                           />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -1066,7 +1053,7 @@
                                 android:id="@+id/criticalPerOneMillion"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
+                                android:layout_marginTop="12dp"
                                 android:fontFamily="@font/bold"
                                 android:textColor="#1E2432"
                                 android:textSize="20sp"/>
@@ -1290,7 +1277,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14"
-                app:srcCompat="@drawable/home_banner_bottom" />
+                app:srcCompat="@drawable/help" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

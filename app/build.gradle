@@ -1,5 +1,8 @@
 plugins {
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
     id 'com.android.application'
+
+
 }
 
 android {
@@ -44,4 +47,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.github.blackfizz:eazegraph:1.2.2@aar'
     implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
 }

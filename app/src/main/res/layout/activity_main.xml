@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
         <com.leo.simplearcloader.SimpleArcLoader
             android:visibility="visible"
@@ -27,6 +27,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="10dp"
     android:orientation="vertical">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -51,10 +52,11 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="15dp"
         android:onClick="details"
         android:id="@+id/constraintLayout1"
         android:layout_width="match_parent"
-        android:layout_height="330dp"
+        android:layout_height="250dp"
         android:background="@drawable/home_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -62,26 +64,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/menu"
-            android:layout_marginLeft="16dp" />
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="20dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/search"
-            android:layout_marginRight="16dp" />
+
+
 
 
         <androidx.cardview.widget.CardView
@@ -252,7 +236,6 @@
             app:layout_constraintEnd_toStartOf="@+id/cardView3"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
             android:layout_marginRight="8dp"
             android:layout_marginLeft="16dp">
 
@@ -1034,10 +1017,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/bold"
+        android:layout_gravity="center"
         android:text="Preventions"
-        android:textColor="#0D1333"
         android:textSize="20sp"
         />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="5dp">
+
+
     <GridLayout
         android:padding="5dp"
         android:id="@+id/GridLayout1"
@@ -1121,7 +1114,7 @@
         </LinearLayout>
 
     </GridLayout>
-
+    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/imageView15"
@@ -1135,7 +1128,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
-        app:srcCompat="@drawable/home_banner_bottom" />
+        app:srcCompat="@drawable/help" />
 </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

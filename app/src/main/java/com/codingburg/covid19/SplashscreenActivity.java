@@ -1,63 +1,41 @@
 package com.codingburg.covid19;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.Settings;
-import android.text.TextUtils;
-import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.gun0912.tedpermission.PermissionListener;
-import com.gun0912.tedpermission.TedPermission;
-
-import org.eazegraph.lib.models.PieModel;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.codingburg.covid19.activity.MainActivity;
 
 public class SplashscreenActivity extends AppCompatActivity {
     private static int SPLASH_Time = 3000;
     private String country;
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT = "text";
+    Animation top_anumation, buttom_animation, middel_animation;
+    private TextView name, news1,news2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splashscreen);
+        top_anumation = AnimationUtils.loadAnimation(this,R.anim.top_animation);
+        buttom_animation = AnimationUtils.loadAnimation(this,R.anim.buttom_animation);
+        middel_animation = AnimationUtils.loadAnimation(this,R.anim.middel_animation);
+        name = findViewById(R.id.name);
+        news1 = findViewById(R.id.news1);
+        news2 = findViewById(R.id.news2);
+        name.setAnimation(top_anumation);
+        news1.setAnimation(middel_animation);
+        news2.setAnimation(buttom_animation);
+
+
         loadData();
         new Handler().postDelayed(new Runnable() {
             @Override
