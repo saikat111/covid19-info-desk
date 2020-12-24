@@ -36,6 +36,7 @@ import com.codingburg.covid19.CountryName;
 import com.codingburg.covid19.R;
 import com.codingburg.covid19.WorldDataActivity;
 import com.codingburg.covid19.YourCountryActivity;
+import com.codingburg.covid19.allcountry.AllcountryActivity;
 import com.leo.simplearcloader.SimpleArcLoader;
 import com.onesignal.OneSignal;
 
@@ -237,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void wordData(View view) {
-        Intent homeIntent=new Intent(getApplicationContext(), WorldDataActivity.class);
+        Intent homeIntent=new Intent(getApplicationContext(), AllcountryActivity.class);
         startActivity(homeIntent);
     }
 
