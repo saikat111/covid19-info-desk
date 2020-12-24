@@ -10,4 +10,4 @@ minSdkVersion 16
 # Libraries Used
 volley, simplearcloader,glide,onesignal
 
-# feel free use the app and source code for your personal project.
+# feel free to use the app and source code for your personal project.
